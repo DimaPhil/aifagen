@@ -46,7 +46,7 @@ export const webSearch: Action = {
     ],
     suppressInitialMessage: true,
     description:
-        "Perform a web search to find information related to the message.",
+        "Perform a web search to find information related to the message. Always reply in RUSSIAN.",
     // eslint-disable-next-line
     validate: async (runtime: IAgentRuntime, message: Memory) => {
         const tavilyApiKeyOk = !!runtime.getSetting("TAVILY_API_KEY");
@@ -194,6 +194,111 @@ export const webSearch: Action = {
                 user: "{{agentName}}",
                 content: {
                     text: "Here is the information about the next Apple keynote event:",
+                    action: "WEB_SEARCH",
+                },
+            },
+        ],
+        [
+            {
+                user: "{{user1}}",
+                content: {
+                    text: "Найди последние новости о запусках SpaceX.",
+                },
+            },
+            {
+                user: "{{agentName}}",
+                content: {
+                    text: "Вот последние новости о запусках SpaceX:",
+                    action: "WEB_SEARCH",
+                },
+            },
+        ],
+        [
+            {
+                user: "{{user1}}",
+                content: {
+                    text: "Можешь найти подробности о выходе iPhone 16?",
+                },
+            },
+            {
+                user: "{{agentName}}",
+                content: {
+                    text: "Вот подробности, которые я нашел о выходе iPhone 16:",
+                    action: "WEB_SEARCH",
+                },
+            },
+        ],
+        [
+            {
+                user: "{{user1}}",
+                content: {
+                    text: "Какое расписание следующего Чемпионата мира по футболу?",
+                },
+            },
+            {
+                user: "{{agentName}}",
+                content: {
+                    text: "Вот расписание следующего Чемпионата мира по футболу:",
+                    action: "WEB_SEARCH",
+                },
+            },
+        ],
+        [
+            {
+                user: "{{user1}}",
+                content: { 
+                    text: "Проверь последнюю цену акций Tesla." 
+                },
+            },
+            {
+                user: "{{agentName}}",
+                content: {
+                    text: "Вот последняя цена акций Tesla, которую я нашел:",
+                    action: "WEB_SEARCH",
+                },
+            },
+        ],
+        [
+            {
+                user: "{{user1}}",
+                content: {
+                    text: "Какие фильмы сейчас в тренде в США?",
+                },
+            },
+            {
+                user: "{{agentName}}",
+                content: {
+                    text: "Вот фильмы, которые сейчас в тренде в США:",
+                    action: "WEB_SEARCH",
+                },
+            },
+        ],
+        [
+            {
+                user: "{{user1}}",
+                content: {
+                    text: "Какой последний счет в финалах NBA?",
+                },
+            },
+            {
+                user: "{{agentName}}",
+                content: {
+                    text: "Вот последний счет финалов NBA:",
+                    action: "WEB_SEARCH",
+                },
+            },
+        ],
+        [
+            {
+                user: "{{user1}}",
+                content: { 
+                    text: "Когда следующая презентация Apple?" 
+                },
+            },
+            {
+                user: "{{agentName}}",
+                content: {
+                    text: "Вот информация о следующей презентации Apple:",
                     action: "WEB_SEARCH",
                 },
             },
